@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Mvc_Vize.Models.idare>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>İdareci Ana Sayfa</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.IdariBirimAd)*@
+            İdari Birim Adı
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.IdariAd)*@
+            İdari Ad
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdariBirimAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdariAd)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.IdareId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.IdareId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.IdareId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

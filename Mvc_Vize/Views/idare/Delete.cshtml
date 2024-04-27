@@ -1,0 +1,40 @@
+﻿@model Mvc_Vize.Models.idare
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Silme Sayfası</h2>
+
+<h3>Gerçekten Silmek İstiyor Musunuz?</h3>
+<div>
+    <h4>idare</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdariBirimAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdariBirimAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdariAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdariAd)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="SİL" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Git", "Index")
+        </div>
+    }
+</div>

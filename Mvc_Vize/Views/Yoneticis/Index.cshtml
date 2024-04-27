@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Mvc_Vize.Models.Yonetici>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Yönetici Ana Sayfa</h2>
+
+<p>
+    @Html.ActionLink("Yönetici Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.YoneticiAd)*@
+            Yönetici Ad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.YoneticiSoyad)*@
+            Yönetici Soyad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.YoneticiRol)*@
+            Yönetici Rol
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YoneticiAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YoneticiSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YoneticiRol)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.YoneticiId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Bilgiler", "Details", new { id=item.YoneticiId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.YoneticiId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

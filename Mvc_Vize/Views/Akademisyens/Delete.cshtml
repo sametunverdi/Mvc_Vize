@@ -1,0 +1,48 @@
+﻿@model Mvc_Vize.Models.Akademisyen
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Silme Sayfası</h2>
+
+<h3>Gerçekten Silmek İstiyor Musunuz?</h3>
+<div>
+    <h4>Akademisyen</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdBolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdBolum)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Git", "Index")
+        </div>
+    }
+</div>
